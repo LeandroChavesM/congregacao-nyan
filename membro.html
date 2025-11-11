@@ -7,6 +7,7 @@
   <title>Perfil - Congregação Nyan</title>
 
   <link rel="stylesheet" href="./src/css/membro.css">
+  <link rel="stylesheet" href="./src/css/medias.css">
 
 </head>
 
@@ -85,7 +86,7 @@
     document.getElementById('link-twitch').href = `https://twitch.tv/${twitch}`;
     document.getElementById('link-discord').href = discord;
     document.getElementById('link-insta').href = instagram;
-    document.getElementById('player').src = `https://player.twitch.tv/?channel=${twitch}&parent=localhost&muted=true`;
+    document.getElementById('player').src = `https://player.twitch.tv/?channel=${twitch}&parent=127.0.0.1:5500&muted=true`;
 
     // aplica cada fundo de acordo com o parâmetro
     if (fundoSecao1) {

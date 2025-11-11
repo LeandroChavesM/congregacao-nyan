@@ -161,6 +161,7 @@ img {
   letter-spacing: 1px;
   margin: 15px 0 50px 0;
   color: transparent;
+  background-clip: text;
   -webkit-background-clip: text; /* recorta o fundo no formato do texto */
   border: 2px solid;
   border-image: linear-gradient(180deg, #33a8db 0%, #1572b7 100%) 1;

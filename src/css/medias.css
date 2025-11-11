@@ -1,0 +1,136 @@
+/* ================================================= */
+/* MEDIA QUERY: TABLET/DESKTOP (min-width: 768px) */
+/* Sobrescreve os estilos de Mobile (membro.css) */
+/* ================================================= */
+@media screen and (min-width: 768px) {
+  .secao {
+    width: 100vw;
+    /* Permite que o conteúdo empilhado use apenas o espaço necessário */
+    min-height: 100vh;
+    display: flex;
+    /* MOBILE: Empilha o fundo e o conteúdo */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* Adiciona padding nas laterais do topo/base */
+    padding: 40px 20px;
+  }
+
+  .cards {
+    width: 100%;
+    display: grid;
+    gap: 15px;
+    padding: 20px 0;
+    /* Grid de 2 ou 3 colunas, adaptável */
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 180px;
+    background: rgb(17, 17, 18);
+    color: antiquewhite;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s ease;
+    cursor: pointer;
+    padding: 3px;
+    text-align: center;
+  }
+  .card:hover {
+    transform: translateY(-3px) scale(1.02);
+  }
+  .card h3 {
+    margin: 0;
+    font-size: 1.1em;
+  }
+
+  .conteudo {
+    position: relative; /* Ajuste para o fluxo normal */
+    width: 95%;
+    max-width: 500px;
+    padding: 2rem 1.5rem;
+
+    /* Mantém o fundo translúcido */
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+    border-radius: 12px;
+
+    /* Centraliza o conteúdo dentro do box .conteudo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    /* Mobile: Conteúdo sempre no fluxo normal */
+    margin: 15px 0;
+    order: 2;
+    z-index: 2;
+  }
+
+  /* Aplica o fundo à seção inteira */
+  .secao.esquerda1 {
+    background-image: var(--fundoSecao1);
+  }
+  .secao.direita1 {
+    background-image: var(--fundoSecao2);
+  }
+  .secao.esquerda2 {
+    background-image: var(--fundoSecao3);
+  }
+  .secao.direita2 {
+    background-image: var(--fundoSecao4);
+  }
+
+  /* Ajusta a ordem para criar o layout LADO A LADO */
+
+  /* ESQUERDA: Coloca o Conteúdo à esquerda (order: 1) e o Fundo à direita (order: 2) */
+  .secao.esquerda1 .conteudo,
+  .secao.esquerda2 .conteudo {
+    order: 1;
+  }
+
+  /* DIREITA: Coloca o Conteúdo à direita (order: 2) e o Fundo à esquerda (order: 1) */
+  .secao.direita1 .conteudo,
+  .secao.direita2 .conteudo {
+    order: 2;
+  }
+
+  /* Títulos e texto */
+  h1,
+  h2 {
+    font-size: 2.2rem;
+  }
+  p {
+    font-size: 1.1rem;
+    max-width: 80%;
+  }
+
+  /* IFRAME */
+  .embed iframe {
+    width: 400px;
+    height: 225px;
+  }
+
+  .redes {
+    justify-content: flex-start;
+    /* Volta para o layout em linha (botões lado a lado) */
+    flex-direction: row;
+  }
+}
+
+/* ================================================= */
+/* MEDIA QUERY: DESKTOP LARGO (min-width: 1200px) */
+/* ================================================= */
+@media screen and (min-width: 1200px) {
+  /* Ajustes específicos para telas muito grandes */
+}
