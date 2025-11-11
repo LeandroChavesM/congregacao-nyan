@@ -30,34 +30,45 @@ cards.forEach((card) => {
 });
 // Fim da animação dos cards em 3d
 
+// Objeto de dados centralizado dos membros
+const MEMBROS = {
+  Ana: {
+    twitch: "ana_live",
+    frase: "Rainha do Just Chatting",
+    cor: "#e91e63",
+    avatar: "avatar-ana.jpg",
+    fundoSecao1: "fern2.webp",
+    fundoSecao2: "fundo2.jpg",
+    fundoSecao3: "Fern.jpg",
+    fundoSecao4: "fundo4.jpg",
+    sobre: "Gosta de conversar com o chat e jogar cozy games",
+    discord: "https://discord.gg", // Substitua pelo link real
+    instagram: "https://instagram.com", // Substitua pelo link real
+    // JOGOS: LISTA DE STRINGS
+    jogos: [
+      { nome: "CS2", fundo: "cs2.jpg" },
+      { nome: "League of Legends", fundo: "lol.jpg" },
+    ],
+  },
+  // Você adicionará outros membros aqui no futuro, como:
+  /*
+  'Bruno': {
+    twitch: 'bruno_stream',
+    frase: 'O Deus do FPS',
+    // ...
+    jogos: ['Valorant', 'CS2', 'Apex Legends']
+  }
+  */
+};
+
+// ...
+// Fim da animação dos cards em 3d
+
 // Função para abrir o perfil do membro
-function abrirPerfil(
-  nome,
-  twitch,
-  frase,
-  cor,
-  avatar,
-  fundoSecao1,
-  fundoSecao2,
-  fundoSecao3,
-  fundoSecao4,
-  sobre,
-  discord,
-  instagram
-) {
+// Simplificada para receber apenas o nome
+function abrirPerfil(nome) {
   const params = new URLSearchParams({
-    nome,
-    twitch,
-    frase,
-    cor,
-    avatar,
-    fundoSecao1: fundoSecao1 || "",
-    fundoSecao2: fundoSecao2 || "",
-    fundoSecao3: fundoSecao3 || "",
-    fundoSecao4: fundoSecao4 || "",
-    sobre: sobre || "",
-    discord: discord || "",
-    instagram: instagram || "",
+    membro: nome, // Agora a URL terá apenas ?membro=Ana
   });
   window.location.href = `membro.html?${params.toString()}`;
 }

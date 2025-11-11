@@ -69,8 +69,11 @@ body {
   color: antiquewhite;
   border-radius: 8px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-  transition: transform 0.2s ease;
+  transition: transform 0.15s ease, box-shadow 0.3s ease;
   cursor: pointer;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform, box-shadow;
   padding: 3px;
   text-align: center;
 }

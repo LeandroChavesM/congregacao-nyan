@@ -64,23 +64,36 @@
 
   <script src="./src/script.js"></script>
   <script>
+    // É necessário ter acesso ao objeto MEMBROS definido em script.js
     const urlParams = new URLSearchParams(window.location.search);
-    const nome = urlParams.get('nome');
-    const twitch = urlParams.get('twitch');
-    const frase = urlParams.get('frase');
-    const cor = urlParams.get('cor');
-    const sobre = urlParams.get('sobre');
-    const discord = urlParams.get('discord');
-    const instagram = urlParams.get('instagram');
+    const nomeMembro = urlParams.get('membro');
 
-    // novos fundos
-    const fundoSecao1 = urlParams.get('fundoSecao1');
-    const fundoSecao2 = urlParams.get('fundoSecao2');
-    const fundoSecao3 = urlParams.get('fundoSecao3');
-    const fundoSecao4 = urlParams.get('fundoSecao4');
+    // Verifica se o membro existe no objeto MEMBROS
+    if (!nomeMembro || !MEMBROS[nomeMembro]) {
+      // Redireciona para a página inicial ou mostra um erro
+      window.location.href = 'index.html';
+    }
 
-    // aplica o conteúdo textual normalmente
-    document.getElementById('nome').textContent = nome;
+    const membro = MEMBROS[nomeMembro];
+
+    // APENAS UMA VEZ: Mapeia as variáveis a partir do objeto 'membro'
+    const {
+      twitch,
+      frase,
+      cor,
+      sobre,
+      discord,
+      instagram,
+      fundoSecao1,
+      fundoSecao2,
+      fundoSecao3,
+      fundoSecao4,
+      jogos // Novo campo
+    } = membro;
+
+
+    // 1. Aplica o conteúdo textual e links
+    document.getElementById('nome').textContent = nomeMembro; // Usa nomeMembro aqui
     document.getElementById('frase').textContent = `"${frase}"`;
     document.getElementById('sobre').textContent = sobre;
     document.getElementById('link-twitch').href = `https://twitch.tv/${twitch}`;
@@ -88,7 +101,7 @@
     document.getElementById('link-insta').href = instagram;
     document.getElementById('player').src = `https://player.twitch.tv/?channel=${twitch}&parent=127.0.0.1:5500&muted=true`;
 
-    // aplica cada fundo de acordo com o parâmetro
+    // 2. Aplica os fundos (código existente, mas usando as variáveis do objeto)
     if (fundoSecao1) {
       const fundo1 = document.querySelector('.secao.esquerda1');
       fundo1.style.background = `url('./src/assets/${fundoSecao1}') center/cover no-repeat`;
@@ -107,6 +120,27 @@
     if (fundoSecao4) {
       const fundo4 = document.querySelector('.secao.direita2');
       fundo4.style.background = `url('./src/assets/${fundoSecao4}') center/cover no-repeat`;
+    }
+
+    // 3. NOVO: Gera os Cards de Jogos Dinamicamente
+    const containerCards = document.querySelector('.secao.direita1 .cards'); // Usa o seletor de classe aqui
+
+    if (jogos && containerCards) {
+      // Limpa o conteúdo (se você já o removeu no Passo 3, esta linha é redundante, mas segura)
+      containerCards.innerHTML = '';
+
+      jogos.forEach(jogo => {
+        const cardDiv = document.createElement('div');
+        cardDiv.className = 'card';
+
+        const h3 = document.createElement('h3');
+        h3.textContent = jogo.nome;
+
+        cardDiv.style.background = `url('./src/assets/${jogo.fundo}') center/cover no-repeat`;
+
+        cardDiv.appendChild(h3);
+        containerCards.appendChild(cardDiv);
+      });
     }
 
   </script>
