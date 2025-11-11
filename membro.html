@@ -136,7 +136,9 @@
         const h3 = document.createElement('h3');
         h3.textContent = jogo.nome;
 
-        cardDiv.style.background = `url('./src/assets/${jogo.fundo}') center/cover no-repeat`;
+        if (jogo.fundo) {
+          cardDiv.style.background = `url('./src/assets/${jogo.fundo}') center/cover no-repeat`;
+        }
 
         cardDiv.appendChild(h3);
         containerCards.appendChild(cardDiv);
