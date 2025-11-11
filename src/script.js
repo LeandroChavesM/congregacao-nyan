@@ -50,8 +50,30 @@ const MEMBROS = {
       { nome: "League of Legends", fundo: "lol.jpg" },
     ],
   },
-  // Você adicionará outros membros aqui no futuro, como:
-  /*
+  Maru: {
+    twitch: "maruxisd",
+    frase: "Platinador de soulslike",
+    cor: "#4c44e4ff",
+    avatar: "maruxisd.png",
+    fundoSecao1: "fern2.webp",
+    fundoSecao2: "fundo2.jpg",
+    fundoSecao3: "Fern.jpg",
+    fundoSecao4: "fundo4.jpg",
+    sobre: "Gosta de um gacha e soulslikes, principalmente Elden Ring",
+    discord: "https://discord.gg", // Substitua pelo link real
+    instagram: "https://instagram.com", // Substitua pelo link real
+    // JOGOS: LISTA DE STRINGS
+    jogos: [
+      { nome: "Genshin Impact", fundo: "" },
+      { nome: "League of Legends", fundo: "lol.jpg" },
+      { nome: "The Witcher 3", fundo: "" },
+      { nome: "Elden Ring", fundo: "" },
+      { nome: "Cyberpunk 2077", fundo: "" },
+    ],
+  },
+};
+// Você adicionará outros membros aqui no futuro, como:
+/*
   'Bruno': {
     twitch: 'bruno_stream',
     frase: 'O Deus do FPS',
@@ -59,7 +81,6 @@ const MEMBROS = {
     jogos: ['Valorant', 'CS2', 'Apex Legends']
   }
   */
-};
 
 // ...
 // Fim da animação dos cards em 3d
