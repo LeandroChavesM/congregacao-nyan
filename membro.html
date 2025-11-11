@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil - Congregação Nyan</title>
+
+  <link rel="stylesheet" href="./src/css/membro.css">
+
+</head>
+
+<body>
+  <button onclick="voltarComReload()" class="voltar">Voltar</button>
+
+  <section class="secao esquerda1">
+    <div class="conteudo esquerda1">
+      <h1 id="nome"></h1>
+      <p id="frase"></p>
+      <p id="sobre"></p>
+    </div>
+  </section>
+
+  <section class="secao direita1">
+    <div class="conteudo direita1">
+      <h2>Jogos mais jogados</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>CS:GO</h3>
+        </div>
+        <div class="card">
+          <h3>League of Legends</h3>
+        </div>
+        <div class="card">
+          <h3>Elden Ring</h3>
+        </div>
+        <div class="card">
+          <h3>Minecraft</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao esquerda2">
+    <div class="conteudo esquerda2">
+      <h2>Redes</h2>
+      <div class="redes">
+        <a id="link-twitch" class="btn twitch" target="_blank">Twitch</a>
+        <a id="link-discord" class="btn discord" target="_blank">Discord</a>
+        <a id="link-insta" class="btn insta" target="_blank">Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao direita2">
+    <div class="conteudo direita2">
+      <h2>Última Live</h2>
+      <div class="embed">
+        <iframe id="player" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <script src="./src/script.js"></script>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const nome = urlParams.get('nome');
+    const twitch = urlParams.get('twitch');
+    const frase = urlParams.get('frase');
+    const cor = urlParams.get('cor');
+    const sobre = urlParams.get('sobre');
+    const discord = urlParams.get('discord');
+    const instagram = urlParams.get('instagram');
+
+    // novos fundos
+    const fundoSecao1 = urlParams.get('fundoSecao1');
+    const fundoSecao2 = urlParams.get('fundoSecao2');
+    const fundoSecao3 = urlParams.get('fundoSecao3');
+    const fundoSecao4 = urlParams.get('fundoSecao4');
+
+    // aplica o conteúdo textual normalmente
+    document.getElementById('nome').textContent = nome;
+    document.getElementById('frase').textContent = `"${frase}"`;
+    document.getElementById('sobre').textContent = sobre;
+    document.getElementById('link-twitch').href = `https://twitch.tv/${twitch}`;
+    document.getElementById('link-discord').href = discord;
+    document.getElementById('link-insta').href = instagram;
+    document.getElementById('player').src = `https://player.twitch.tv/?channel=${twitch}&parent=localhost&muted=true`;
+
+    // aplica cada fundo de acordo com o parâmetro
+    if (fundoSecao1) {
+      const fundo1 = document.querySelector('.secao.esquerda1');
+      fundo1.style.background = `url('./src/assets/${fundoSecao1}') center/cover no-repeat`;
+    }
+
+    if (fundoSecao2) {
+      const fundo2 = document.querySelector('.secao.direita1');
+      fundo2.style.background = `url('./src/assets/${fundoSecao2}') center/cover no-repeat`;
+    }
+
+    if (fundoSecao3) {
+      const fundo3 = document.querySelector('.secao.esquerda2');
+      fundo3.style.background = `url('./src/assets/${fundoSecao3}') center/cover no-repeat`;
+    }
+
+    if (fundoSecao4) {
+      const fundo4 = document.querySelector('.secao.direita2');
+      fundo4.style.background = `url('./src/assets/${fundoSecao4}') center/cover no-repeat`;
+    }
+
+  </script>
+</body>
+
+
+
+</html>

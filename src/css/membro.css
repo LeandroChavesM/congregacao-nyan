@@ -1,0 +1,246 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  color: white;
+  background: #111;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+.voltar {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  padding: 0.4rem 0.8rem;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 10;
+  transition: 0.2s;
+}
+
+.voltar:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Estrutura base */
+.secao {
+  width: 100vw;
+  /* MÍNIMO de 100vh, mas EXPANSÍVEL */
+  min-height: 100vh;
+  display: flex;
+  /* Empilha o conteúdo no mobile */
+  flex-direction: column;
+  /* Centraliza verticalmente */
+  justify-content: center;
+  /* Centraliza horizontalmente */
+  align-items: center;
+  position: relative;
+  /* Adiciona um padding para que o conteúdo não toque as bordas da tela */
+  padding: 40px 20px;
+}
+
+/* alternância de layout */
+.secao.esquerda1 .conteudo,
+.secao.esquerda2 .conteudo {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  order: 1;
+  text-align: center;
+  align-items: center;
+}
+.secao.esquerda1 .fundo,
+.secao.esquerda2 .fundo {
+  order: 2;
+}
+
+.secao.direita1 .conteudo,
+.secao.direita2 .conteudo {
+  position: absolute;
+  order: 2;
+  text-align: center;
+}
+.secao.direita1 .fundo,
+.secao.direita2 .fundo {
+  order: 1;
+}
+
+.cards {
+  width: 100%;
+  display: grid;
+  gap: 15px;
+  padding: 20px 0;
+  /* Cria uma grade responsiva com itens de no mínimo 120px */
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  width: 100%; /* Usa 100% do espaço da célula do grid */
+  height: 180px;
+  background: rgb(17, 17, 18);
+  color: antiquewhite;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: transform 0.15s ease, box-shadow 0.3s ease;
+  position: static; /* ESSENCIAL para o grid funcionar */
+  cursor: pointer;
+  padding: 3px;
+  text-align: center;
+  /* Adicione aqui as propriedades para a borda animada (se desejar) */
+}
+
+/* Adicionando estilo para o título do jogo */
+.card h3 {
+  margin: 0;
+  font-size: 1.1em;
+}
+
+/* Efeito hover simples */
+.card:hover {
+  transform: translateY(-5px) scale(1.02);
+}
+
+.conteudo {
+  position: relative; /* Volta ao fluxo normal do layout */
+  width: 95%;
+  max-width: 500px; /* Limita a largura em telas maiores para melhor leitura */
+  padding: 2rem 1.5rem;
+  /* Mantém o fundo translúcido */
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+  border-radius: 12px;
+
+  /* Centraliza o conteúdo dentro do box .conteudo */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.fundo {
+  width: 50%;
+  height: 100%;
+  background-size: cover;
+  opacity: 0.8;
+}
+
+/* Títulos e texto */
+h1,
+h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: #e91e63;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  max-width: 80%;
+  opacity: 0.9;
+}
+
+.redes {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 1rem;
+}
+
+.btn {
+  padding: 0.4em 0.8em;
+  border-radius: 12px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.twitch {
+  background: #6441a5;
+}
+.insta {
+  background: #e1306c;
+}
+.discord {
+  background: #5865f2;
+}
+
+.embed iframe {
+  width: 400px;
+  height: 225px;
+  border-radius: 12px;
+  border: none;
+}
+
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+  .secao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* empilha o fundo e o conteúdo */
+    height: 100vh; /* permite rolar naturalmente */
+  }
+
+  .fundo {
+    height: 40vh; /* mostra só parte da imagem */
+    order: 1; /* fundo vem antes */
+  }
+
+  .conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 80%;
+    padding: 2rem 1rem;
+    text-align: center;
+    order: 2; /* conteúdo vem depois */
+  }
+
+  .conteudo h1,
+  .conteudo h2 {
+    font-size: 1.6rem;
+  }
+
+  p {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  .redes {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .embed iframe {
+    width: 18em;
+    height: 200px;
+  }
+}
