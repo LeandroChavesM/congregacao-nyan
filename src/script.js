@@ -31,7 +31,7 @@ cards.forEach((card) => {
 // Fim da animação dos cards em 3d
 
 // Objeto de dados centralizado dos membros
-const MEMBROS = {
+window.MEMBROS = {
   Ana: {
     twitch: "ana_live",
     frase: "Rainha do Just Chatting",
@@ -44,12 +44,20 @@ const MEMBROS = {
     sobre: "Gosta de conversar com o chat e jogar cozy games",
     discord: "https://discord.gg", // Substitua pelo link real
     instagram: "https://instagram.com", // Substitua pelo link real
-    // JOGOS: LISTA DE STRINGS
+    // JOGOS: Lista de Objetos com nome e fundo (se for usar)
     jogos: [
-      { nome: "CS2", fundo: "cs2.jpg" },
-      { nome: "League of Legends", fundo: "lol.jpg" },
+      { nome: "Stardew Valley", fundo: "stardew_bg.jpg" },
+      { nome: "The Sims 4", fundo: "sims_bg.jpg" },
+      { nome: "Minecraft", fundo: "minecraft_bg.jpg" },
+    ],
+    // CLIPES: Lista de Objetos com o slug (ID do clipe) e título (opcional)
+    clips: [
+      // Substitua 'ExemploClipSlug1' pelo slug real do seu clipe
+      { slug: "ExemploClipSlug1", titulo: "O Melhor Jumpscare" },
+      { slug: "ExemploClipSlug2", titulo: "A Vitória mais Suada" },
     ],
   },
+  // Você adicionará outros membros aqui no futuro...
   Maru: {
     twitch: "maruxisd",
     frase: "Platinador de soulslike",
@@ -70,6 +78,15 @@ const MEMBROS = {
       { nome: "Elden Ring", fundo: "" },
       { nome: "Cyberpunk 2077", fundo: "" },
     ],
+    // CLIPES: Lista de Objetos com o slug (ID do clipe) e título (opcional)
+    clips: [
+      // Substitua 'ExemploClipSlug1' pelo slug real do seu clipe
+      {
+        slug: "RenownedDullCrabRiPepperonis-IuU3wcbxr5NOl6Ag",
+        titulo: "O Melhor Jumpscare",
+      },
+      { slug: "ExemploClipSlug2", titulo: "A Vitória mais Suada" },
+    ],
   },
 };
 // Você adicionará outros membros aqui no futuro, como:
@@ -81,9 +98,6 @@ const MEMBROS = {
     jogos: ['Valorant', 'CS2', 'Apex Legends']
   }
   */
-
-// ...
-// Fim da animação dos cards em 3d
 
 // Função para abrir o perfil do membro
 // Simplificada para receber apenas o nome

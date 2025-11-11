@@ -25,19 +25,7 @@
   <section class="secao direita1">
     <div class="conteudo direita1">
       <h2>Jogos mais jogados</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>CS:GO</h3>
-        </div>
-        <div class="card">
-          <h3>League of Legends</h3>
-        </div>
-        <div class="card">
-          <h3>Elden Ring</h3>
-        </div>
-        <div class="card">
-          <h3>Minecraft</h3>
-        </div>
+      <div id="jogos-container" class="cards">
       </div>
     </div>
   </section>
@@ -55,28 +43,27 @@
 
   <section class="secao direita2">
     <div class="conteudo direita2">
-      <h2>Última Live</h2>
-      <div class="embed">
-        <iframe id="player" allowfullscreen></iframe>
+      <h2>Clipes & Momentos</h2>
+      <div class="embed" id="clips-container">
       </div>
     </div>
   </section>
-
   <script src="./src/script.js"></script>
+
   <script>
-    // É necessário ter acesso ao objeto MEMBROS definido em script.js
     const urlParams = new URLSearchParams(window.location.search);
     const nomeMembro = urlParams.get('membro');
 
-    // Verifica se o membro existe no objeto MEMBROS
-    if (!nomeMembro || !MEMBROS[nomeMembro]) {
-      // Redireciona para a página inicial ou mostra um erro
+    // Fallback: verifica se o objeto de dados e o membro existem
+    if (!nomeMembro || !window.MEMBROS || !window.MEMBROS[nomeMembro]) {
+      // Redireciona se o membro não for encontrado
+      console.error('Membro não encontrado ou MEMBROS não carregado.');
       window.location.href = 'index.html';
     }
 
-    const membro = MEMBROS[nomeMembro];
+    const membro = window.MEMBROS[nomeMembro];
 
-    // APENAS UMA VEZ: Mapeia as variáveis a partir do objeto 'membro'
+    // Mapeia todas as variáveis a partir do objeto 'membro'
     const {
       twitch,
       frase,
@@ -88,66 +75,95 @@
       fundoSecao2,
       fundoSecao3,
       fundoSecao4,
-      jogos // Novo campo
+      jogos, // Lista de objetos de jogos
+      clips  // Lista de objetos de clipes
     } = membro;
 
-
-    // 1. Aplica o conteúdo textual e links
-    document.getElementById('nome').textContent = nomeMembro; // Usa nomeMembro aqui
+    // A. APLICA CONTEÚDO E LINKS (Dados textuais)
+    document.getElementById('nome').textContent = nomeMembro;
     document.getElementById('frase').textContent = `"${frase}"`;
     document.getElementById('sobre').textContent = sobre;
     document.getElementById('link-twitch').href = `https://twitch.tv/${twitch}`;
     document.getElementById('link-discord').href = discord;
     document.getElementById('link-insta').href = instagram;
-    document.getElementById('player').src = `https://player.twitch.tv/?channel=${twitch}&parent=127.0.0.1:5500&muted=true`;
 
-    // 2. Aplica os fundos (código existente, mas usando as variáveis do objeto)
-    if (fundoSecao1) {
-      const fundo1 = document.querySelector('.secao.esquerda1');
-      fundo1.style.background = `url('./src/assets/${fundoSecao1}') center/cover no-repeat`;
-    }
+    // ----------------------------------------------------------------------
+    // B. APLICA OS FUNDOS 
+    // ----------------------------------------------------------------------
+    const aplicarFundo = (seletor, fundo) => {
+      if (fundo) {
+        document.querySelector(seletor).style.background = `url('./src/assets/${fundo}') center/cover no-repeat`;
+      }
+    };
 
-    if (fundoSecao2) {
-      const fundo2 = document.querySelector('.secao.direita1');
-      fundo2.style.background = `url('./src/assets/${fundoSecao2}') center/cover no-repeat`;
-    }
+    aplicarFundo('.secao.esquerda1', fundoSecao1);
+    aplicarFundo('.secao.direita1', fundoSecao2);
+    aplicarFundo('.secao.esquerda2', fundoSecao3);
+    aplicarFundo('.secao.direita2', fundoSecao4);
 
-    if (fundoSecao3) {
-      const fundo3 = document.querySelector('.secao.esquerda2');
-      fundo3.style.background = `url('./src/assets/${fundoSecao3}') center/cover no-repeat`;
-    }
 
-    if (fundoSecao4) {
-      const fundo4 = document.querySelector('.secao.direita2');
-      fundo4.style.background = `url('./src/assets/${fundoSecao4}') center/cover no-repeat`;
-    }
+    // ----------------------------------------------------------------------
+    // C. GERA OS CARDS DE JOGOS DINAMICAMENTE
+    // ----------------------------------------------------------------------
+    const containerJogos = document.querySelector('.secao.direita1 .cards');
 
-    // 3. NOVO: Gera os Cards de Jogos Dinamicamente
-    const containerCards = document.querySelector('.secao.direita1 .cards'); // Usa o seletor de classe aqui
-
-    if (jogos && containerCards) {
-      // Limpa o conteúdo (se você já o removeu no Passo 3, esta linha é redundante, mas segura)
-      containerCards.innerHTML = '';
+    if (jogos && containerJogos) {
+      containerJogos.innerHTML = ''; // Limpa os cards fixos do HTML
 
       jogos.forEach(jogo => {
         const cardDiv = document.createElement('div');
         cardDiv.className = 'card';
 
+        // Aplica o fundo do jogo (se existir)
+        if (jogo.fundo) {
+          cardDiv.style.background = `url('./src/assets/${jogo.fundo}') center/cover no-repeat`;
+          cardDiv.style.backgroundSize = 'cover';
+          cardDiv.style.position = 'relative';
+          cardDiv.style.color = '#fff'; // Ajusta a cor do texto, se necessário
+        }
+
         const h3 = document.createElement('h3');
         h3.textContent = jogo.nome;
 
-        if (jogo.fundo) {
-          cardDiv.style.background = `url('./src/assets/${jogo.fundo}') center/cover no-repeat`;
-        }
-
         cardDiv.appendChild(h3);
-        containerCards.appendChild(cardDiv);
+        containerJogos.appendChild(cardDiv);
+      });
+    }
+
+    // ----------------------------------------------------------------------
+    // D. NOVO: GERA O(S) IFRAME(S) DOS CLIPES DINAMICAMENTE
+    // ----------------------------------------------------------------------
+    const containerClipes = document.getElementById('clips-container');
+
+    if (clips && containerClipes) {
+      containerClipes.innerHTML = ''; // Limpa o iframe fixo do HTML
+
+      // Define o 'parent' necessário pelo Twitch (o domínio/host do seu site)
+      const parentDomain = window.location.hostname;
+
+      clips.forEach(clip => {
+        // URL de embed para clipes: https://clips.twitch.tv/embed?clip=<CLIP_SLUG>&parent=<YOUR_DOMAIN>
+        const clipUrl = `https://clips.twitch.tv/embed?clip=${clip.slug}&parent=${parentDomain}`;
+
+        const iframe = document.createElement('iframe');
+        iframe.src = clipUrl;
+        iframe.title = clip.titulo || 'Twitch Clip';
+        iframe.width = '100%';
+        iframe.height = '225'; // Altura definida no CSS (membro.css/medias.css)
+        iframe.allowFullscreen = true;
+        iframe.frameBorder = 0;
+        iframe.scrolling = 'no';
+
+        containerClipes.appendChild(iframe);
+
+        // Adiciona uma margem inferior para separar clipes, se houver mais de um
+        if (clips.length > 1) {
+          iframe.style.marginBottom = '20px';
+        }
       });
     }
 
   </script>
 </body>
-
-
 
 </html>
