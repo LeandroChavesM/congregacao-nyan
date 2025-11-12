@@ -1,3 +1,101 @@
+// Animação dos cards em 3d + Lógica de Foco
+const cards = document.querySelectorAll(".card");
+const maxAngle = 12; // Ângulo máximo de inclinação para o 3D
+let cardFocado = null; // Variável global para rastrear o card focado
+
+cards.forEach((card) => {
+  // 1. SALVA A TRANSFORMAÇÃO INICIAL DO CSS (PROBLEMA 1)
+  // Isso deve ser feito UMA VEZ para cada card antes de qualquer evento
+  const initialTransform = getComputedStyle(card).transform;
+  card.dataset.initialTransform = initialTransform;
+
+  // Adiciona as transições (como você já tem)
+  card.style.willChange = "transform, box-shadow, width, height, top, left";
+
+  // 2. LÓGICA DE FOCO (Clique) - CORRIGE ALTERNÂNCIA (PROBLEMA 3)
+  card.addEventListener("click", (e) => {
+    // Ignora o clique no botão de perfil
+    if (e.target.classList.contains("verperfil")) return;
+
+    // Se houver outro card focado, desfoque-o primeiro (CORREÇÃO PROBLEMA 3)
+    if (cardFocado !== null) {
+      cardFocado.classList.remove("foco");
+      // RESTAURA o card antigo
+      cardFocado.style.transform = cardFocado.dataset.initialTransform;
+      cardFocado.style.boxShadow = "0 10px 30px rgba(0, 0, 0, 0.5)";
+      cardFocado.style.zIndex = "auto";
+      cardFocado.style.transition =
+        "transform 1000ms ease, box-shadow 1000ms ease";
+    }
+
+    // Foca o card clicado
+    card.classList.add("foco");
+    cardFocado = card;
+
+    // Desativa a transição do CSS para o 3D funcionar no mousemove
+    card.style.transition = "none";
+    card.style.zIndex = 1000;
+
+    // Aplica o transform inicial de FOCO para centralizar (do CSS)
+    card.style.transform = "translate(-50%, -50%)";
+  });
+
+  // 3. Animação 3D (APENAS se o card estiver FOCADO) - CORREÇÃO 3D (PROBLEMA 2)
+  card.addEventListener("mousemove", (e) => {
+    // ATIVA a animação 3D SOMENTE se o card estiver focado
+    if (cardFocado !== card) return;
+
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const rotateX = ((centerY - y) / centerY) * maxAngle;
+    const rotateY = ((x - centerX) / centerX) * maxAngle;
+
+    // COMBINAÇÃO: Transf. Foco (Centralização) + Rotação 3D do mouse
+    // O focoTransform é SEMPRE o translate(-50%, -50%) no estado de FOCO
+    const focoTransform = "translate(-50%, -50%)";
+
+    card.style.transform = `perspective(1000px) ${focoTransform} rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(0)`;
+
+    // Ajusta a sombra para um efeito mais dramático no foco
+    card.style.boxShadow = `0 ${20 + Math.abs(rotateX)}px ${
+      40 + Math.abs(rotateY)
+    }px rgba(0,0,0,0.6)`;
+  });
+
+  // 4. MOUSELEAVE (Retorna ao estado FOCADO sem 3D)
+  card.addEventListener("mouseleave", () => {
+    // Se o card estiver focado, remove o 3D, mas MANTÉM o FOCO/Centralização
+    if (cardFocado === card) {
+      // Volta ao estado de foco sem 3D (apenas a centralização)
+      card.style.transform = "translate(-50%, -50%)";
+      card.style.boxShadow = "0 25px 50px rgba(0, 0, 0, 0.9)"; // Sombra padrão do foco
+      return;
+    }
+
+    // Se não está focado, o CSS cuida do mouseleave (hover -> descanso)
+  });
+});
+
+// Opcional: Clique fora do card para desativar o foco (JÁ estava correto, mas ajustado)
+document.body.addEventListener("click", (e) => {
+  // Se o clique não foi dentro de um card e há um card focado
+  if (cardFocado && !e.target.closest(".card")) {
+    cardFocado.classList.remove("foco");
+    // RESTAURA a transformação do baralho (PROBLEMA 1)
+    cardFocado.style.transform = cardFocado.dataset.initialTransform;
+    cardFocado.style.boxShadow = "0 10px 30px rgba(0, 0, 0, 0.5)";
+    cardFocado.style.zIndex = "auto";
+    cardFocado.style.transition =
+      "transform 1000ms ease, box-shadow 1000ms ease";
+    cardFocado = null;
+  }
+});
+// Fim da animação dos cards e lógica de foco
+
 // const cards = document.querySelectorAll(".card");
 // cards.forEach((card) => {
 //   card.addEventListener("mousemove", () => {
@@ -116,7 +214,7 @@ function abrirPerfil(nome) {
 }
 
 function voltarComReload() {
-  history.back();
+  window.location.href = "index.html";
   // Espera a navegação voltar e recarrega
   setTimeout(() => window.location.reload(), 150);
 }

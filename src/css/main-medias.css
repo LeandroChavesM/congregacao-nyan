@@ -92,4 +92,42 @@
     overflow-x: hidden;
     overflow-y: hidden;
   }
+
+  /* Em main.css */
+
+  /* Esconde todos os filhos do card, exceto o h3 (o nome) por padrão */
+  .card > *:not(h3) {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+  .card h3 {
+    z-index: 10; /* Garante que o nome esteja sempre visível no topo */
+  }
+
+  /* NOVO: Estilo para o Card Focado (Expandido e Centralizado) */
+  .card.foco {
+    /* Centralização na tela. O !important é necessário para sobrescrever os transforms estáticos */
+    transform: none !important;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) !important;
+
+    /* Expansão e elevação (Ajuste estes valores conforme a necessidade de foco) */
+    width: 300px !important;
+    height: 400px !important;
+    z-index: 1000;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.9);
+    cursor: default; /* Remove o cursor de seleção */
+
+    /* A transição será controlada pelo JS para o 3D */
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  /* Mostra o conteúdo quando o card tem a classe 'foco' */
+  .card.foco > *:not(h3) {
+    opacity: 1;
+    visibility: visible;
+  }
 }
