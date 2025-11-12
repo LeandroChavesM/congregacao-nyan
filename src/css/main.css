@@ -108,8 +108,8 @@ img {
 }
 
 /* Pseudo-elemento para a Borda Animada */
-.card.card1::after,
-.card.card1::before {
+.card::after,
+.card::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -137,13 +137,13 @@ img {
 }
 
 /* Pseudo-elemento para o Efeito de Brilho (Opcional) */
-.card.card1::before {
+.card::before {
   filter: blur(1.5rem);
   opacity: 0.5;
   z-index: -2; /* Fica ainda mais atrás do ::after para o efeito de brilho */
 }
 
-.card.card1 > * {
+.card > * {
   position: relative;
   z-index: 2; /* Garante que o conteúdo do card (avatar, texto, etc.) fique por cima de tudo */
 }
