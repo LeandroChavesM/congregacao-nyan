@@ -24,7 +24,7 @@
 
   <section class="secao direita1">
     <div class="conteudo direita1">
-      <h2>Jogos mais jogados</h2>
+      <h2 class="titulo">Jogos mais jogados</h2>
       <div id="jogos-container" class="cards">
       </div>
     </div>
@@ -32,7 +32,7 @@
 
   <section class="secao esquerda2">
     <div class="conteudo esquerda2">
-      <h2>Redes</h2>
+      <h2 class="titulo">Redes</h2>
       <div class="redes">
         <a id="link-twitch" class="btn twitch" target="_blank">Twitch</a>
         <a id="link-discord" class="btn discord" target="_blank">Discord</a>
@@ -43,7 +43,7 @@
 
   <section class="secao direita2">
     <div class="conteudo direita2">
-      <h2>Clipes & Momentos</h2>
+      <h2 class="titulo">Clipes & Momentos</h2>
       <div class="embed" id="clips-container">
       </div>
     </div>
@@ -80,12 +80,21 @@
     } = membro;
 
     // A. APLICA CONTEÚDO E LINKS (Dados textuais)
-    document.getElementById('nome').textContent = nomeMembro;
+    nome = document.getElementById('nome');
     document.getElementById('frase').textContent = `"${frase}"`;
     document.getElementById('sobre').textContent = sobre;
     document.getElementById('link-twitch').href = `https://twitch.tv/${twitch}`;
     document.getElementById('link-discord').href = discord;
     document.getElementById('link-insta').href = instagram;
+
+
+    nome.textContent = nomeMembro;
+    nome.style.color = cor;
+
+    titulos = document.querySelectorAll('.titulo');
+    titulos.forEach(titulo => {
+      titulo.style.color = cor;
+    });
 
     // ----------------------------------------------------------------------
     // B. APLICA OS FUNDOS 

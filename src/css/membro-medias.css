@@ -77,34 +77,6 @@
     z-index: 2;
   }
 
-  /* Aplica o fundo à seção inteira */
-  .secao.esquerda1 {
-    background-image: var(--fundoSecao1);
-  }
-  .secao.direita1 {
-    background-image: var(--fundoSecao2);
-  }
-  .secao.esquerda2 {
-    background-image: var(--fundoSecao3);
-  }
-  .secao.direita2 {
-    background-image: var(--fundoSecao4);
-  }
-
-  /* Ajusta a ordem para criar o layout LADO A LADO */
-
-  /* ESQUERDA: Coloca o Conteúdo à esquerda (order: 1) e o Fundo à direita (order: 2) */
-  .secao.esquerda1 .conteudo,
-  .secao.esquerda2 .conteudo {
-    order: 1;
-  }
-
-  /* DIREITA: Coloca o Conteúdo à direita (order: 2) e o Fundo à esquerda (order: 1) */
-  .secao.direita1 .conteudo,
-  .secao.direita2 .conteudo {
-    order: 2;
-  }
-
   /* Títulos e texto */
   h1,
   h2 {
