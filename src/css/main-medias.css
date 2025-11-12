@@ -1,24 +1,31 @@
 @media screen and (min-width: 768px) {
   body {
-    overflow-y: hidden;
-    max-height: 50vh;
+    overflow: hidden;
+  }
+
+  main {
+    position: relative;
   }
 
   #cards {
     position: absolute;
     bottom: 0;
     background: none;
-    grid-template-columns: repeat(5, 1fr);
     justify-self: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     gap: 3px;
+    padding: 0;
+    margin: 0;
   }
 
   .card {
+    position: relative;
     width: 150px;
     height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    padding: 0;
   }
 
   .card1 {
@@ -78,5 +85,11 @@
     font-size: 0.9em;
     height: 2em;
     margin: 0;
+  }
+
+  html,
+  body {
+    overflow-x: hidden;
+    overflow-y: hidden;
   }
 }
