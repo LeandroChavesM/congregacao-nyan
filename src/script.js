@@ -167,10 +167,10 @@ window.MEMBROS = {
     frase: "Rainha do Just Chatting",
     cor: "#e91e63",
     avatar: "avatar-ana.jpg",
-    fundoSecao1: "fern2.webp",
-    fundoSecao2: "fundo2.jpg",
-    fundoSecao3: "Fern.jpg",
-    fundoSecao4: "fundo4.jpg",
+    fundos: {
+      mobile: ["fern2.webp", "fundoFern.jpg"],
+      desktop: ["fern2.webp", "fundoFern.jpg"],
+    },
     sobre: "Gosta de conversar com o chat e jogar cozy games",
     discord: "https://discord.gg", // Substitua pelo link real
     instagram: "https://instagram.com", // Substitua pelo link real
@@ -193,10 +193,10 @@ window.MEMBROS = {
     frase: "Platinador de soulslike",
     cor: "#4c44e4ff",
     avatar: "maruxisd.png",
-    fundoSecao1: "frierenFundo.jpg",
-    fundoSecao2: "fundo2.jpg",
-    fundoSecao3: "frierenFundoMobile.jpg",
-    fundoSecao4: "fundo4.jpg",
+    fundos: {
+      mobile: ["frierenFundo.jpg", "frierenFundoMobile.jpg"],
+      desktop: ["fern2.webp", "fundoFern.jpg"],
+    },
     sobre: "Gosta de um gacha e soulslikes, principalmente Elden Ring",
     discord: "https://discord.gg", // Substitua pelo link real
     instagram: "https://instagram.com", // Substitua pelo link real

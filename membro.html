@@ -75,6 +75,7 @@
       fundoSecao2,
       fundoSecao3,
       fundoSecao4,
+      fundos, // Objeto com arrays de fundos para mobile e desktop
       jogos, // Lista de objetos de jogos
       clips  // Lista de objetos de clipes
     } = membro;
@@ -99,16 +100,58 @@
     // ----------------------------------------------------------------------
     // B. APLICA OS FUNDOS 
     // ----------------------------------------------------------------------
-    const aplicarFundo = (seletor, fundo) => {
-      if (fundo) {
-        document.querySelector(seletor).style.background = `url('./src/assets/${fundo}') center/cover no-repeat`;
+    // A. ... (Seu código A anterior) ...
+
+    // ----------------------------------------------------------------------
+    // B. NOVO E SIMPLES: APLICA OS FUNDOS COM MEDIA QUERY DO JS
+    // ----------------------------------------------------------------------
+
+    // Define a Media Query para telas pequenas (ex: 768px)
+    const mediaQueryMobile = window.matchMedia('(min-width: 768px)');
+
+    // Função Auxiliar que lida com o índice
+    const aplicarFundoPorIndice = (seletor, fundosData, indice) => {
+      const mobileFundoArray = fundosData.mobile || [];
+      const desktopFundoArray = fundosData.desktop || [];
+
+      let fundoUsar = mobileFundoArray[indice]; // Fundo mobile no índice especificado
+
+      if (mediaQueryMobile.matches) {
+        fundoUsar = desktopFundoArray[indice]; // Fundo desktop no índice especificado
+      }
+
+      const elemento = document.querySelector(seletor);
+
+      if (elemento && fundoUsar) {
+        elemento.style.background = `url('./src/assets/${fundoUsar}') center/cover no-repeat`;
       }
     };
 
-    aplicarFundo('.secao.esquerda1', fundoSecao1);
-    aplicarFundo('.secao.direita1', fundoSecao2);
-    aplicarFundo('.secao.esquerda2', fundoSecao3);
-    aplicarFundo('.secao.direita2', fundoSecao4);
+
+    // Chamadas:
+    if (membro.fundos) {
+      // Aplica o PRIMEIRO fundo (índice 0) na seção esquerda1
+      aplicarFundoPorIndice('.secao.esquerda1', membro.fundos, 0);
+
+      // Aplica o SEGUNDO fundo (índice 1) na seção direita1
+      aplicarFundoPorIndice('.secao.esquerda2', membro.fundos, 1);
+
+      // Você pode continuar para a próxima seção se tiver mais fundos no array:
+      // aplicarFundoPorIndice('.secao.esquerda2', membro.fundos, 2); 
+      // aplicarFundoPorIndice('.secao.direita2', membro.fundos, 3); 
+    }
+
+    // ... remova a chamada e o listener da aplicarFundoResponsivo original se usar esta nova lógica
+
+    // Opcional: Você pode querer que o fundo mude instantaneamente se o usuário redimensionar
+    mediaQueryMobile.addEventListener('change', () => {
+      if (membro.fundos) {
+        aplicarFundoResponsivo('.secao.esquerda1', membro.fundos);
+      }
+    });
+
+    // ----------------------------------------------------------------------
+    // C. ... (Seu código C anterior) ...
 
 
     // ----------------------------------------------------------------------
