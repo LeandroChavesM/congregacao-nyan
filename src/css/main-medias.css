@@ -108,11 +108,11 @@
   /* NOVO: Estilo para o Card Focado (Expandido e Centralizado) */
   .card.foco {
     /* Centralização na tela. O !important é necessário para sobrescrever os transforms estáticos */
-    transform: none !important;
+    transform: none;
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) !important;
+    transform: translate(-50%, -50%);
 
     /* Expansão e elevação (Ajuste estes valores conforme a necessidade de foco) */
     width: 300px !important;
