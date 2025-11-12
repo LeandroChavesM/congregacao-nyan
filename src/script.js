@@ -30,7 +30,7 @@ function aplicarLogicaDesktop() {
   // 2. ADICIONA EVENT LISTENERS APENAS EM DESKTOP
   cards.forEach((card) => {
     // Define a transição inicial do JS (importante para o hover/descanso)
-    card.style.transition = "transform 200ms ease, box-shadow 200ms ease";
+    card.style.transition = "transform 600ms ease, box-shadow 600ms ease";
     card.style.willChange = "transform, box-shadow, width, height, top, left";
 
     // LÓGICA DE FOCO (Clique)
@@ -47,7 +47,7 @@ function aplicarLogicaDesktop() {
         cardFocado.style.boxShadow = "";
         cardFocado.style.zIndex = "auto";
         cardFocado.style.transition =
-          "transform 200ms ease, box-shadow 200ms ease";
+          "transform 600ms ease, box-shadow 600ms ease";
       }
 
       // FOCA O CARD CLICADO
@@ -110,9 +110,8 @@ function aplicarLogicaDesktop() {
       // Limpa o transform inline para que o CSS do :hover/baralho reassuma
       cardFocado.style.transform = "";
       cardFocado.style.boxShadow = "";
-      cardFocado.style.zIndex = "auto";
       cardFocado.style.transition =
-        "transform 200ms ease, box-shadow 200ms ease";
+        "transform 600ms ease, box-shadow 600ms ease";
       cardFocado = null;
     }
   };
@@ -194,9 +193,9 @@ window.MEMBROS = {
     frase: "Platinador de soulslike",
     cor: "#4c44e4ff",
     avatar: "maruxisd.png",
-    fundoSecao1: "fern2.webp",
+    fundoSecao1: "frierenFundo.jpg",
     fundoSecao2: "fundo2.jpg",
-    fundoSecao3: "Fern.jpg",
+    fundoSecao3: "frierenFundoMobile.jpg",
     fundoSecao4: "fundo4.jpg",
     sobre: "Gosta de um gacha e soulslikes, principalmente Elden Ring",
     discord: "https://discord.gg", // Substitua pelo link real

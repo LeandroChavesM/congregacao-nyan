@@ -107,6 +107,12 @@ img {
   /* Garante que o gradiente fique abaixo do conteúdo do card */
 }
 
+.card.card2 {
+  background: url("../assets/frierenFundo.jpg") no-repeat center/cover;
+  position: relative;
+  /* Garante que o gradiente fique abaixo do conteúdo do card */
+}
+
 /* Pseudo-elemento para a Borda Animada */
 .card::after,
 .card::before {
