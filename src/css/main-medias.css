@@ -1,14 +1,16 @@
 @media screen and (min-width: 768px) {
   body {
     overflow-y: hidden;
+    max-height: 50vh;
   }
 
   #cards {
     position: absolute;
     bottom: 0;
     background: none;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     justify-self: center;
+    gap: 3px;
   }
 
   .card {
@@ -17,6 +19,49 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+  }
+
+  .card1 {
+    transform: rotateZ(-26deg) translateY(75px);
+    margin-right: 7px;
+  }
+  .card2 {
+    transform: rotateZ(-12deg) translateY(20px);
+    margin-right: -2px;
+  }
+  .card3 {
+    z-index: 2;
+  }
+  .card4 {
+    transform: rotateZ(12deg) translateY(20px);
+    z-index: 1;
+    margin-left: -2px;
+  }
+  .card5 {
+    transform: rotateZ(26deg) translateY(75px);
+    margin-left: 7px;
+  }
+
+  .card1:hover {
+    transform: rotateZ(-26deg) translateY(35px);
+    transition: transform 0.3s ease;
+  }
+  .card2:hover {
+    transform: rotateZ(-12deg) translateY(-15px);
+    transition: transform 0.3s ease;
+  }
+  .card3:hover {
+    transform: translateY(-30px);
+    transition: transform 0.3s ease;
+  }
+
+  .card4:hover {
+    transform: rotateZ(12deg) translateY(-15px);
+    transition: transform 0.3s ease;
+  }
+  .card5:hover {
+    transform: rotateZ(26deg) translateY(35px);
+    transition: transform 0.3s ease;
   }
 
   .card img {

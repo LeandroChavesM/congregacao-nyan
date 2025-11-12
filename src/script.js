@@ -1,33 +1,40 @@
-// Animação dos cards em 3d
-const cards = document.querySelectorAll(".card");
-const maxAngle = 12; // Ângulo máximo de inclinação
+// const cards = document.querySelectorAll(".card");
+// cards.forEach((card) => {
+//   card.addEventListener("mousemove", () => {
+//     card.style.transform = "translateY(-10px) rotateZ(10deg)";
+//   });
+// });
 
-cards.forEach((card) => {
-  card.style.transition = "transform 200ms ease, box-shadow 200ms ease";
-  card.style.willChange = "transform, box-shadow"; // melhora composição
+// // Animação dos cards em 3d
+// const cards = document.querySelectorAll(".card");
+// const maxAngle = 12; // Ângulo máximo de inclinação
 
-  card.addEventListener("mousemove", (e) => {
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
+// cards.forEach((card) => {
+//   card.style.transition = "transform 200ms ease, box-shadow 200ms ease";
+//   card.style.willChange = "transform, box-shadow"; // melhora composição
 
-    const rotateX = ((centerY - y) / centerY) * maxAngle;
-    const rotateY = ((x - centerX) / centerX) * maxAngle;
+//   card.addEventListener("mousemove", (e) => {
+//     const rect = card.getBoundingClientRect();
+//     const x = e.clientX - rect.left;
+//     const y = e.clientY - rect.top;
+//     const centerX = rect.width / 2;
+//     const centerY = rect.height / 2;
 
-    // perspective vem do pai (#cards), aqui só rotações
-    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(0)`;
-    card.style.boxShadow = `0 ${20 + Math.abs(rotateX)}px ${
-      40 + Math.abs(rotateY)
-    }px rgba(0,0,0,0.6)`;
-  });
+//     const rotateX = ((centerY - y) / centerY) * maxAngle;
+//     const rotateY = ((x - centerX) / centerX) * maxAngle;
 
-  card.addEventListener("mouseleave", () => {
-    card.style.transform = `rotateX(0deg) rotateY(0deg)`;
-    card.style.boxShadow = "0 10px 30px rgba(0, 0, 0, 0.5)";
-  });
-});
+//     // perspective vem do pai (#cards), aqui só rotações
+//     card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(0)`;
+//     card.style.boxShadow = `0 ${20 + Math.abs(rotateX)}px ${
+//       40 + Math.abs(rotateY)
+//     }px rgba(0,0,0,0.6)`;
+//   });
+
+//   card.addEventListener("mouseleave", () => {
+//     card.style.transform = `rotateX(0deg) rotateY(0deg)`;
+//     card.style.boxShadow = "0 10px 30px rgba(0, 0, 0, 0.5)";
+//   });
+// });
 // Fim da animação dos cards em 3d
 
 // Objeto de dados centralizado dos membros
