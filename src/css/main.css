@@ -17,7 +17,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: url(../assets/frierenpaper.jpg) no-repeat center/cover;
+  background: url(../assets/bgs/frierenpaper.jpg) no-repeat center/cover;
   position: relative;
   height: 100vh;
 }
@@ -37,7 +37,7 @@
 
 @media screen and (min-width: 1400px) {
   #home {
-    background: url(../assets/frierenpaper2.jpeg) no-repeat center/cover;
+    background: url(../assets/bgs/frierenpaper2.jpeg) no-repeat center/cover;
   }
   #home-content {
     font-size: 2em;
@@ -102,13 +102,23 @@ img {
 }
 
 .card.card1 {
-  background: url("../assets/fundoFern2.jpg") no-repeat center/cover;
+  background: url("../assets/cardbgs/ubelCard.jpg") no-repeat center/cover;
   position: relative;
   /* Garante que o gradiente fique abaixo do conteúdo do card */
 }
 
 .card.card2 {
-  background: url("../assets/frierenFundo.jpg") no-repeat center/cover;
+  background: url("../assets/bgs/frierenFundo.jpg") no-repeat center/cover;
+  position: relative;
+  /* Garante que o gradiente fique abaixo do conteúdo do card */
+}
+.card.card3 {
+  background: url("../assets/cardbgs/fundoFern2.jpg") no-repeat center/cover;
+  position: relative;
+  /* Garante que o gradiente fique abaixo do conteúdo do card */
+}
+.card.card4 {
+  background: url("../assets/cardbgs/landCard.jpg") no-repeat center/cover;
   position: relative;
   /* Garante que o gradiente fique abaixo do conteúdo do card */
 }

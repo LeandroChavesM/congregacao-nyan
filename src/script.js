@@ -162,28 +162,34 @@ desktopQuery.addEventListener("change", aplicarLogicaDesktop);
 
 // Objeto de dados centralizado dos membros
 window.MEMBROS = {
-  Ana: {
-    twitch: "ana_live",
-    frase: "Rainha do Just Chatting",
+  Yksin: {
+    twitch: "yksin_",
+    frase:
+      "Ex melhor jogador de soulslike da América Latina (é o que ele acha)",
     cor: "#e91e63",
     avatar: "avatar-ana.jpg",
     fundos: {
-      mobile: ["fern2.webp", "fundoFern.jpg"],
-      desktop: ["fern2.webp", "fundoFern.jpg"],
+      mobile: ["fern.webp", "fern2.jpg"],
+      desktop: ["fern.webp", "fundoFern.jpg"],
     },
     sobre: "Gosta de conversar com o chat e jogar cozy games",
     discord: "https://discord.gg", // Substitua pelo link real
     instagram: "https://instagram.com", // Substitua pelo link real
     // JOGOS: Lista de Objetos com nome e fundo (se for usar)
     jogos: [
-      { nome: "Stardew Valley", fundo: "stardew_bg.jpg" },
-      { nome: "The Sims 4", fundo: "sims_bg.jpg" },
-      { nome: "Minecraft", fundo: "minecraft_bg.jpg" },
+      { nome: "", fundo: "genshinCard.avif" },
+      { nome: "Chaos Zero Nightmare", fundo: "sims_bg.jpg" },
+      { nome: "Wuthering Vaves", fundo: "minecraft_bg.jpg" },
+      { nome: "Dark souls", fundo: "minecraft_bg.jpg" },
+      { nome: "Overwatch", fundo: "minecraft_bg.jpg" },
     ],
     // CLIPES: Lista de Objetos com o slug (ID do clipe) e título (opcional)
     clips: [
       // Substitua 'ExemploClipSlug1' pelo slug real do seu clipe
-      { slug: "ExemploClipSlug1", titulo: "O Melhor Jumpscare" },
+      {
+        slug: "StylishSweetOrangePraiseIt-SyhB7O0knkIwBMvf",
+        titulo: "Chuva de Gemas",
+      },
       { slug: "ExemploClipSlug2", titulo: "A Vitória mais Suada" },
     ],
   },
@@ -194,8 +200,8 @@ window.MEMBROS = {
     cor: "#4c44e4ff",
     avatar: "maruxisd.png",
     fundos: {
-      mobile: ["frierenFundo.jpg", "frierenFundoMobile.jpg"],
-      desktop: ["fern2.webp", "fundoFern.jpg"],
+      mobile: ["frierenFundo2.jpg", "frierenFundoMobile.jpg"],
+      desktop: ["frierenFundo.jpg", "frierenFundoDesktop.jpg"],
     },
     sobre: "Gosta de um gacha e soulslikes, principalmente Elden Ring",
     discord: "https://discord.gg", // Substitua pelo link real
