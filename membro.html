@@ -71,13 +71,9 @@
       sobre,
       discord,
       instagram,
-      fundoSecao1,
-      fundoSecao2,
-      fundoSecao3,
-      fundoSecao4,
       fundos, // Objeto com arrays de fundos para mobile e desktop
       jogos, // Lista de objetos de jogos
-      clips  // Lista de objetos de clipes
+      clips // Lista de objetos de clipes
     } = membro;
 
     // A. APLICA CONTEÚDO E LINKS (Dados textuais)
@@ -97,14 +93,10 @@
       titulo.style.color = cor;
     });
 
-    // ----------------------------------------------------------------------
-    // B. APLICA OS FUNDOS 
-    // ----------------------------------------------------------------------
-    // A. ... (Seu código A anterior) ...
 
     // ----------------------------------------------------------------------
-    // B. NOVO E SIMPLES: APLICA OS FUNDOS COM MEDIA QUERY DO JS
-    // ----------------------------------------------------------------------
+    // APLICA OS FUNDOS COM MEDIA QUERY DO JS
+
 
     // Define a Media Query para telas pequenas (ex: 768px)
     const mediaQueryMobile = window.matchMedia('(min-width: 768px)');
@@ -140,8 +132,6 @@
       // aplicarFundoPorIndice('.secao.esquerda2', membro.fundos, 2); 
       // aplicarFundoPorIndice('.secao.direita2', membro.fundos, 3); 
     }
-
-    // ... remova a chamada e o listener da aplicarFundoResponsivo original se usar esta nova lógica
 
     // Opcional: Você pode querer que o fundo mude instantaneamente se o usuário redimensionar
     mediaQueryMobile.addEventListener('change', () => {
