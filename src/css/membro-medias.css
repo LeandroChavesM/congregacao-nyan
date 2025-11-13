@@ -89,7 +89,7 @@
 
   /* IFRAME */
   .embed iframe {
-    width: 400px;
+    width: 500px;
     height: 225px;
   }
 
@@ -98,11 +98,64 @@
     /* Volta para o layout em linha (botões lado a lado) */
     flex-direction: row;
   }
+
+  .conteudo.direita2 {
+    max-width: 70%;
+  }
+
+  .embed iframe {
+    justify-self: center;
+    align-self: center;
+    max-width: 400px;
+    height: 400px;
+  }
 }
 
 /* ================================================= */
 /* MEDIA QUERY: DESKTOP LARGO (min-width: 1200px) */
 /* ================================================= */
+@media screen and (min-width: 1023px) {
+  .conteudo.direita2 {
+    max-width: 70%;
+  }
+
+  .embed iframe {
+    justify-self: center;
+    align-self: center;
+    max-width: 550px;
+    width: 550px;
+    height: 400px;
+  }
+  /* Ajustes específicos para telas muito grandes */
+}
 @media screen and (min-width: 1200px) {
+  .conteudo.direita2 {
+    max-width: 70%;
+  }
+
+  .embed iframe {
+    justify-self: center;
+    align-self: center;
+    max-width: 700px;
+    width: 700px;
+    height: 400px;
+  }
+  /* Ajustes específicos para telas muito grandes */
+}
+@media screen and (min-width: 1600px) {
+  .conteudo.direita2 {
+    max-width: 90%;
+  }
+  .embed {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    width: 100%;
+    gap: 20px;
+  }
+  .embed iframe {
+    justify-self: center;
+    max-width: 500px;
+    height: 400px;
+  }
   /* Ajustes específicos para telas muito grandes */
 }
