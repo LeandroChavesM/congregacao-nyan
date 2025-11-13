@@ -152,10 +152,6 @@
     });
 
     // ----------------------------------------------------------------------
-    // C. ... (Seu código C anterior) ...
-
-
-    // ----------------------------------------------------------------------
     // C. GERA OS CARDS DE JOGOS DINAMICAMENTE
     // ----------------------------------------------------------------------
     const containerJogos = document.querySelector('.secao.direita1 .cards');
@@ -169,7 +165,7 @@
 
         // Aplica o fundo do jogo (se existir)
         if (jogo.fundo) {
-          cardDiv.style.background = `url('./src/assets/${jogo.fundo}') center/cover no-repeat`;
+          cardDiv.style.background = `url('./src/assets/gamebgs/${jogo.fundo}') center/cover no-repeat`;
           cardDiv.style.backgroundSize = 'cover';
           cardDiv.style.position = 'relative';
           cardDiv.style.color = '#fff'; // Ajusta a cor do texto, se necessário

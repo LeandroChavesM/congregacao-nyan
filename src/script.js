@@ -178,7 +178,7 @@ window.MEMBROS = {
     // JOGOS: Lista de Objetos com nome e fundo (se for usar)
     jogos: [
       { nome: "", fundo: "genshinCard.avif" },
-      { nome: "Chaos Zero Nightmare", fundo: "sims_bg.jpg" },
+      { nome: "Chaos Zero Nightmare", fundo: "cznCard.jpg" },
       { nome: "Wuthering Vaves", fundo: "minecraft_bg.jpg" },
       { nome: "Dark souls", fundo: "minecraft_bg.jpg" },
       { nome: "Overwatch", fundo: "minecraft_bg.jpg" },
@@ -197,7 +197,7 @@ window.MEMBROS = {
   Maru: {
     twitch: "maruxisd",
     frase: "Platinador de soulslike",
-    cor: "#4c44e4ff",
+    cor: "#7f79f0ff",
     avatar: "maruxisd.png",
     fundos: {
       mobile: ["frierenFundo2.jpg", "frierenFundoMobile.jpg"],
@@ -208,20 +208,27 @@ window.MEMBROS = {
     instagram: "https://instagram.com", // Substitua pelo link real
     // JOGOS: LISTA DE STRINGS
     jogos: [
-      { nome: "Genshin Impact", fundo: "" },
-      { nome: "League of Legends", fundo: "lol.jpg" },
-      { nome: "The Witcher 3", fundo: "" },
-      { nome: "Elden Ring", fundo: "" },
-      { nome: "Cyberpunk 2077", fundo: "" },
+      { nome: "", fundo: "genshinCard.avif" },
+      { nome: "", fundo: "lol.jpg" },
+      { nome: "", fundo: "thewitcherCard.jpg" },
+      { nome: "", fundo: "eldenringCard.jpg" },
+      { nome: "", fundo: "cyberpunkCard.jpg" },
     ],
     // CLIPES: Lista de Objetos com o slug (ID do clipe) e título (opcional)
     clips: [
       // Substitua 'ExemploClipSlug1' pelo slug real do seu clipe
       {
         slug: "RenownedDullCrabRiPepperonis-IuU3wcbxr5NOl6Ag",
-        titulo: "O Melhor Jumpscare",
+        titulo: "TIGRESAAAAAAA",
       },
-      { slug: "ExemploClipSlug2", titulo: "A Vitória mais Suada" },
+      {
+        slug: "BloodyExuberantMetalFrankerZ-JX0VB0h6nIDHvWz8",
+        titulo: "Susto",
+      },
+      {
+        slug: "PiercingThoughtfulHippoCoolStoryBob-qPzPYuC77bhtazAz",
+        titulo: "IMAGINA MATA ALGUEM??",
+      },
     ],
   },
 };
