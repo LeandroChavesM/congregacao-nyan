@@ -122,6 +122,11 @@ img {
   position: relative;
   /* Garante que o gradiente fique abaixo do conteúdo do card */
 }
+.card.card5 {
+  background: url("../assets/cardbgs/starkCard.jpg") no-repeat center/cover;
+  position: relative;
+  /* Garante que o gradiente fique abaixo do conteúdo do card */
+}
 
 /* Pseudo-elemento para a Borda Animada */
 .card::after,
