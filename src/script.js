@@ -168,7 +168,7 @@ window.MEMBROS = {
     cor: "#791becff",
     avatar: "fotwitch.png",
     fundos: {
-      mobile: ["ubelFundoMob.jpg", "ubelFundomob2.jpg"],
+      mobile: ["ubelFundoMob.jpg", "ubelFundoMob2.jpg"],
       desktop: ["ubelFundoDesk2.jpg", "ubelFundoDesk.webp"],
     },
     sobre: "Da parry como ninguém, é o melhor dos souls, e ainda é bom no cs",
@@ -191,7 +191,7 @@ window.MEMBROS = {
     cor: "#7f79f0ff",
     avatar: "maruxisd.png",
     fundos: {
-      mobile: ["frierenfundo.jpg", "frierenFundoMobile.jpg"],
+      mobile: ["frierenFundo.jpg", "frierenFundoMobile.jpg"],
       desktop: ["frierenFundo3.jpg", "frierenFundoDesktop.jpg"],
     },
     sobre: "Gosta de um gacha e soulslikes, principalmente Elden Ring",
