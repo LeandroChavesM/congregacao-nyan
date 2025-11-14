@@ -162,46 +162,37 @@ desktopQuery.addEventListener("change", aplicarLogicaDesktop);
 
 // Objeto de dados centralizado dos membros
 window.MEMBROS = {
-  Yksin: {
-    twitch: "yksin_",
-    frase:
-      "Ex melhor jogador de soulslike da América Latina (é o que ele acha)",
-    cor: "#e91e63",
-    avatar: "avatar-ana.jpg",
+  TenyTe: {
+    twitch: "maruxisd",
+    frase: "Platinador de soulslike",
+    cor: "#791becff",
+    avatar: "maruxisd.png",
     fundos: {
-      mobile: ["fern.webp", "fern2.jpg"],
-      desktop: ["fern.webp", "fundoFern.jpg"],
+      mobile: ["ubelFundoMob.jpg", "ubelFundomob2.jpg"],
+      desktop: ["ubelFundoDesk2.jpg", "ubelFundoDesk.webp"],
     },
-    sobre: "Gosta de conversar com o chat e jogar cozy games",
+    sobre: "Gosta de um gacha e soulslikes, principalmente Elden Ring",
     discord: "https://discord.gg", // Substitua pelo link real
     instagram: "https://instagram.com", // Substitua pelo link real
-    // JOGOS: Lista de Objetos com nome e fundo (se for usar)
+    // JOGOS: LISTA DE STRINGS
     jogos: [
-      { nome: "", fundo: "genshinCard.avif" },
-      { nome: "Chaos Zero Nightmare", fundo: "cznCard.jpg" },
-      { nome: "Wuthering Vaves", fundo: "minecraft_bg.jpg" },
-      { nome: "Dark souls", fundo: "minecraft_bg.jpg" },
-      { nome: "Overwatch", fundo: "minecraft_bg.jpg" },
-    ],
-    // CLIPES: Lista de Objetos com o slug (ID do clipe) e título (opcional)
-    clips: [
-      // Substitua 'ExemploClipSlug1' pelo slug real do seu clipe
-      {
-        slug: "StylishSweetOrangePraiseIt-SyhB7O0knkIwBMvf",
-        titulo: "Chuva de Gemas",
-      },
-      { slug: "ExemploClipSlug2", titulo: "A Vitória mais Suada" },
+      { nome: "", fundo: "dofus.png" },
+      { nome: "", fundo: "poe1.jpg" },
+      { nome: "", fundo: "cs2.jpg" },
+      { nome: "", fundo: "darksouls1r.avif" },
+      { nome: "", fundo: "darksouls2.jpg" },
+      { nome: "", fundo: "darksouls3.jpg" },
     ],
   },
-  // Você adicionará outros membros aqui no futuro...
+  // CLIPES: Lista de Objetos com o slug (ID do clipe) e título (opcional)
   Maru: {
     twitch: "maruxisd",
     frase: "Platinador de soulslike",
     cor: "#7f79f0ff",
     avatar: "maruxisd.png",
     fundos: {
-      mobile: ["frierenFundo2.jpg", "frierenFundoMobile.jpg"],
-      desktop: ["frierenFundo.jpg", "frierenFundoDesktop.jpg"],
+      mobile: ["frierenfundo.jpg", "frierenFundoMobile.jpg"],
+      desktop: ["frierenFundo3.jpg", "frierenFundoDesktop.jpg"],
     },
     sobre: "Gosta de um gacha e soulslikes, principalmente Elden Ring",
     discord: "https://discord.gg", // Substitua pelo link real
@@ -230,6 +221,79 @@ window.MEMBROS = {
         titulo: "IMAGINA MATA ALGUEM??",
       },
     ],
+  },
+  Yksin: {
+    twitch: "yksin_",
+    frase:
+      "Ex melhor jogador de soulslike da América Latina (é o que ele acha)",
+    cor: "#e91e63",
+    avatar: "avatar-ana.jpg",
+    fundos: {
+      mobile: ["fern.webp", "fern2.jpg"],
+      desktop: ["fernFundoDesk.jpg", "fundoFern.jpg"],
+    },
+    sobre: "Gosta de conversar com o chat e jogar cozy games",
+    discord: "https://discord.gg", // Substitua pelo link real
+    instagram: "https://instagram.com", // Substitua pelo link real
+    // JOGOS: Lista de Objetos com nome e fundo (se for usar)
+    jogos: [
+      { nome: "", fundo: "genshinCard.avif" },
+      { nome: "Chaos Zero Nightmare", fundo: "cznCard.jpg" },
+      { nome: "", fundo: "wuwa.jpg" },
+      { nome: "", fundo: "darksouls3.jpg" },
+      { nome: "", fundo: "over.jpg" },
+    ],
+    // CLIPES: Lista de Objetos com o slug (ID do clipe) e título (opcional)
+    clips: [
+      // Substitua 'ExemploClipSlug1' pelo slug real do seu clipe
+      {
+        slug: "StylishSweetOrangePraiseIt-SyhB7O0knkIwBMvf",
+        titulo: "Chuva de Gemas",
+      },
+      { slug: "ExemploClipSlug2", titulo: "A Vitória mais Suada" },
+    ],
+  },
+  Ban: {
+    twitch: "yksin_",
+    frase:
+      "Ex melhor jogador de soulslike da América Latina (é o que ele acha)",
+    cor: "#f8e621ff",
+    avatar: "avatar-ana.jpg",
+    fundos: {
+      mobile: ["landFundoMob.jpg", "landCard.jpg"],
+      desktop: ["landFundoDesk.webp", "landFundoMob2.jpg"],
+    },
+    sobre: "Gosta de conversar com o chat e jogar cozy games",
+    discord: "https://discord.gg", // Substitua pelo link real
+    instagram: "https://instagram.com", // Substitua pelo link real
+    // JOGOS: Lista de Objetos com nome e fundo (se for usar)
+    jogos: [
+      { nome: "", fundo: "genshinCard.avif" },
+      { nome: "", fundo: "darksouls1r.avif" },
+    ],
+    // CLIPES: Lista de Objetos com o slug (ID do clipe) e título (opcional)
+  },
+  // Você adicionará outros membros aqui no futuro...
+  Fuzer: {
+    twitch: "",
+    frase: "Elden ring kkj",
+    cor: "#caf468ff",
+    avatar: "maruxisd.png",
+    fundos: {
+      mobile: ["starkFundoDesk.jpg", "starkFundoDesk2.jpeg"],
+      desktop: ["starkFundoDesk.jpeg", "starkFundoDesk2.jpeg"],
+    },
+    sobre: "jogador de elden ring kkkj",
+    discord: "https://discord.gg", // Substitua pelo link real
+    instagram: "https://instagram.com", // Substitua pelo link real
+    // JOGOS: LISTA DE STRINGS
+    jogos: [
+      { nome: "", fundo: "eldenringCard.jpg" },
+      { nome: "", fundo: "genshinCard.avif" },
+      { nome: "", fundo: "lol.jpg" },
+      { nome: "", fundo: "cs2.jpg" },
+    ],
+    // CLIPES: Lista de Objetos com o slug (ID do clipe) e título (opcional)
   },
 };
 // Você adicionará outros membros aqui no futuro, como:

@@ -179,6 +179,12 @@ p {
   border: none;
 }
 
+#wclips,
+#wclips2 {
+  font-size: 1.5em;
+  color: antiquewhite;
+}
+
 /* @media (max-width: 768px) {
   body {
     overflow-x: hidden;

@@ -44,6 +44,8 @@
   <section class="secao direita2">
     <div class="conteudo direita2">
       <h2 class="titulo">Clipes & Momentos</h2>
+      <h2 id="wclips"></h2>
+      <h2 id="wclips2"></h2>
       <div class="embed" id="clips-container">
       </div>
     </div>
@@ -173,6 +175,15 @@
     // D. NOVO: GERA O(S) IFRAME(S) DOS CLIPES DINAMICAMENTE
     // ----------------------------------------------------------------------
     const containerClipes = document.getElementById('clips-container');
+    const SemClip = document.getElementById('wclips');
+    const SemClip2 = document.getElementById('wclips2');
+
+
+    if (!clips) {
+      SemClip.textContent = `A menos que você tenha uma máquina do tempo, não foi encontrado nenhuma live feita por ${nomeMembro}.`
+      SemClip2.textContent = `Talvez só seja um viewer!`
+
+    }
 
     if (clips && containerClipes) {
       containerClipes.innerHTML = ''; // Limpa o iframe fixo do HTML
