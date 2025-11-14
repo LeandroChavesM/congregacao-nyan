@@ -1,7 +1,7 @@
 # congregacao-nyan
 
 
-Andrew Gonçalves Lana - 423201176
+Andrew Gonçalves Lana - 423201176 
 Cauê Mendonça de Sousa - 422104846
 Leandro Cavalcante Chaves da Mata - 422107065
 Nathan Guilherme Silva do Nascimento - 422103703
