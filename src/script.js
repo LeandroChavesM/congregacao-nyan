@@ -163,15 +163,15 @@ desktopQuery.addEventListener("change", aplicarLogicaDesktop);
 // Objeto de dados centralizado dos membros
 window.MEMBROS = {
   TenyTe: {
-    twitch: "maruxisd",
-    frase: "Platinador de soulslike",
+    twitch: "",
+    frase: "Deus dos soulslikes, jogou todos, zerou todos, essa é a diferença",
     cor: "#791becff",
-    avatar: "maruxisd.png",
+    avatar: "fotwitch.png",
     fundos: {
       mobile: ["ubelFundoMob.jpg", "ubelFundomob2.jpg"],
       desktop: ["ubelFundoDesk2.jpg", "ubelFundoDesk.webp"],
     },
-    sobre: "Gosta de um gacha e soulslikes, principalmente Elden Ring",
+    sobre: "Da parry como ninguém, é o melhor dos souls, e ainda é bom no cs",
     discord: "https://discord.gg", // Substitua pelo link real
     instagram: "https://instagram.com", // Substitua pelo link real
     // JOGOS: LISTA DE STRINGS
@@ -195,7 +195,7 @@ window.MEMBROS = {
       desktop: ["frierenFundo3.jpg", "frierenFundoDesktop.jpg"],
     },
     sobre: "Gosta de um gacha e soulslikes, principalmente Elden Ring",
-    discord: "https://discord.gg", // Substitua pelo link real
+    discord: "https://discord.gg/vHRmyzWs", // Substitua pelo link real
     instagram: "https://instagram.com", // Substitua pelo link real
     // JOGOS: LISTA DE STRINGS
     jogos: [
@@ -227,13 +227,13 @@ window.MEMBROS = {
     frase:
       "Ex melhor jogador de soulslike da América Latina (é o que ele acha)",
     cor: "#e91e63",
-    avatar: "avatar-ana.jpg",
+    avatar: "yksinAvatar.png",
     fundos: {
       mobile: ["fern.webp", "fern2.jpg"],
       desktop: ["fernFundoDesk.jpg", "fundoFern.jpg"],
     },
     sobre: "Gosta de conversar com o chat e jogar cozy games",
-    discord: "https://discord.gg", // Substitua pelo link real
+    discord: "https://discord.gg/FXCKcW4S", // Substitua pelo link real
     instagram: "https://instagram.com", // Substitua pelo link real
     // JOGOS: Lista de Objetos com nome e fundo (se for usar)
     jogos: [
@@ -250,20 +250,22 @@ window.MEMBROS = {
         slug: "StylishSweetOrangePraiseIt-SyhB7O0knkIwBMvf",
         titulo: "Chuva de Gemas",
       },
-      { slug: "ExemploClipSlug2", titulo: "A Vitória mais Suada" },
+      {
+        slug: "LachrymoseIronicMochaWTRuck-kLCzrPGeSpNxm0NN",
+        titulo: "[ZZZ] Pegando Alice",
+      },
     ],
   },
   Ban: {
-    twitch: "yksin_",
-    frase:
-      "Ex melhor jogador de soulslike da América Latina (é o que ele acha)",
+    twitch: "",
+    frase: "Simpatico",
     cor: "#f8e621ff",
     avatar: "avatar-ana.jpg",
     fundos: {
       mobile: ["landFundoMob.jpg", "landCard.jpg"],
       desktop: ["landFundoDesk.webp", "landFundoMob2.jpg"],
     },
-    sobre: "Gosta de conversar com o chat e jogar cozy games",
+    sobre: "Gosta de conversar com os amigos e jogar umas paradinhas sociaveis",
     discord: "https://discord.gg", // Substitua pelo link real
     instagram: "https://instagram.com", // Substitua pelo link real
     // JOGOS: Lista de Objetos com nome e fundo (se for usar)
